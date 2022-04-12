@@ -1,0 +1,16 @@
+package co.edu.uniquindio.estructura.taller.punto2;
+
+import co.edu.uniquindio.estructura.taller.modelo.Pila;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Pila<Integer> pila = new Pila<>();
+		
+		while (pila.getTamanio() < 10) pila.apilar((int) (Math.random()*(10-1)+1));
+		
+		System.out.println(pila.obtenerInfoPila());
+	}
+
+}

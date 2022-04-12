@@ -1,0 +1,21 @@
+package co.edu.uniquindio.estructura.preparcial.punto5;
+
+import co.edu.uniquindio.estructura.taller.modelo.ListaSimple;
+import co.edu.uniquindio.estructura.taller.modelo.Nodo;
+
+public class Main <T>{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ListaSimple<Nodo<Integer>> listaSimple = new ListaSimple<>();
+		listaSimple.agregarNodo(new Nodo<Integer>(3));
+		listaMD(3, listaSimple);
+		
+	}
+
+	private static void listaMD(int i, ListaSimple<Nodo<Integer>> listaSimple) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

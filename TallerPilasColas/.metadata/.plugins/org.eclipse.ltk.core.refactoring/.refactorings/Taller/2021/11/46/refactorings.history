@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;co.edu.uniquindio.estructura.taller.modelo&apos; to &apos;Preparcial/src&apos;&#x0D;&#x0A;- Original project: &apos;Taller&apos;&#x0D;&#x0A;- Destination element: &apos;Preparcial/src&apos;&#x0D;&#x0A;- Original element: &apos;Taller/src/co.edu.uniquindio.estructura.taller.modelo&apos;" description="Copy package" destination="=Preparcial/src" element1="/src&lt;co.edu.uniquindio.estructura.taller.modelo" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1636500263120" version="1.0"/>
+</session>

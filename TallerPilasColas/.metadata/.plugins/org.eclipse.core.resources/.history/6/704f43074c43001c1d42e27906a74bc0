@@ -1,0 +1,106 @@
+package co.edu.uniquindio.estructura.taller.modelo;
+
+import java.util.Iterator;
+import java.util.ListIterator;
+
+public class ListaDobleEnlazada <T> implements Iterable<Nodo<T>>{
+
+	private Nodo<T> primerNodo;
+	private Nodo<T> ultimoNodo;
+	private int tamanio;
+
+	public ListaDobleEnlazada() {
+		super();
+		this.primerNodo = null;
+		this.ultimoNodo = null;
+		this.tamanio = 0;
+	}
+
+	public Nodo<T> getPrimerNodo() {
+		return primerNodo;
+	}
+
+	public void setPrimerNodo(Nodo<T> primerNodo) {
+		this.primerNodo = primerNodo;
+	}
+
+	public Nodo<T> getUltimoNodo() {
+		return ultimoNodo;
+	}
+
+	public void setUltimoNodo(Nodo<T> ultimoNodo) {
+		this.ultimoNodo = ultimoNodo;
+	}
+
+	public int getTamanio() {
+		return tamanio;
+	}
+
+	public void setTamanio(int tamanio) {
+		this.tamanio = tamanio;
+	}
+
+	public void agregarNodo(T dato){
+
+		Nodo<T> nuevoNodo = new Nodo<T>(dato);
+		if (primerNodo == null){
+			primerNodo = nuevoNodo;
+			ultimoNodo = nuevoNodo;
+		}
+		else{
+			nuevoNodo.setNodoSiguiente(primerNodo);
+			primerNodo.setNodoAnterior(nuevoNodo);
+			primerNodo = nuevoNodo;
+		}
+		tamanio ++;
+	}
+
+	public void mostrarNodos(){
+
+		NodoIntegerDoble nodoAux = primerNodo;
+
+		while (nodoAux != null){
+			System.out.print("<-[" + nodoAux.getValor() + "]->");
+			nodoAux = nodoAux.getNodoSiguiente();
+		}
+		System.out.println();
+	}
+
+	public void mostrarNodosInversos (){
+
+		NodoIntegerDoble nodoAux = ultimoNodo;
+
+		while (nodoAux != null){
+			System.out.print("<-[" + nodoAux.getValor() + "]->");
+			nodoAux = nodoAux.getNodoAnterior();
+		}
+		System.out.println();
+	}
+
+	@Override
+	public Iterator<NodoIntegerDoble> iterator() {
+		return new Iterador();
+	}
+
+	public class Iterador implements Iterator<NodoIntegerDoble>{
+
+		private NodoIntegerDoble nodo;
+
+		public Iterador() {
+			super();
+			this.nodo = primerNodo;
+		}
+
+		@Override
+		public boolean hasNext() {
+			return nodo != null;
+		}
+
+		@Override
+		public NodoIntegerDoble next() {
+			NodoIntegerDoble nodoAux = nodo;
+			nodo = nodo.getNodoSiguiente();
+			return nodoAux;
+		}
+	}
+}

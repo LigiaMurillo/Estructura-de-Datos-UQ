@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;listasEnlazadas.Nodo&apos; to &apos;NodoUno&apos;&#x0D;&#x0A;- Original project: &apos;LinkedList&apos;&#x0D;&#x0A;- Original element: &apos;listasEnlazadas.Nodo&apos;&#x0D;&#x0A;- Renamed element: &apos;listasEnlazadas.NodoUno&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Nodo&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;listasEnlazadas{Nodo.java[Nodo" matchStrategy="1" name="NodoUno" qualified="false" references="true" similarDeclarations="false" stamp="1635266504822" textual="false" version="1.0"/>
+</session>

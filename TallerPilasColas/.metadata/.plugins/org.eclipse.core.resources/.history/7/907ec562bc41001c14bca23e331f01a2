@@ -1,0 +1,48 @@
+package co.edu.uniquindio.estructura.preparcial.punto5;
+
+import co.edu.uniquindio.estructura.taller.modelo.ListaSimple;
+import co.edu.uniquindio.estructura.taller.modelo.Nodo;
+import javafx.scene.effect.Light.Distant;
+
+public class Main <T>{
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ListaSimple<Integer> listaSimple = new ListaSimple<>();
+		listaSimple.agregarNodo(9);
+		listaSimple.agregarNodo(4);
+		listaSimple.agregarNodo(6);
+		listaSimple.agregarNodo(8);
+		listaSimple.agregarNodo(4);
+		listaSimple.agregarNodo(5);
+		listaSimple.agregarNodo(4);
+		listaSimple.agregarNodo(4);
+		int clave = 4;
+		int distMaxima = buscarMD(listaSimple.getPrimero(), clave, 0,0);
+	}
+
+	private static int buscarMD(Nodo<Integer> nodo, int clave, int dist, int maxDist) {
+
+		if (nodo !=	null){
+			if (dist == 0){
+				if (nodo.getInfo() == clave){
+					dist = 1;
+				}else{
+					if (nodo.getInfo() != clave){
+						dist ++;
+					}else{
+						if (dist > maxDist){
+							maxDist = dist;
+							dist = 1;
+						}
+					}
+				}
+			}
+			buscarMD(nodo.getSiguiente(), clave, dist, maxDist);
+		}else{
+			return maxDist;
+		}
+		return maxDist;
+	}
+}
