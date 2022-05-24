@@ -2,6 +2,8 @@ package co.edu.uniquindio;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -12,6 +14,20 @@ public class Main {
         
         Pila pila = new Pila();
         inicializarPila(matriz, pila);
+
+        ListaSimpleCircularEnlazada<NodoEnlaceSimple> listaJugadores = new ListaSimpleCircularEnlazada<>();
+        inicializarJugadores(listaJugadores);
+
+
+    }
+
+    private static void inicializarJugadores(ListaSimpleCircularEnlazada<NodoEnlaceSimple> listaJugadores) {
+
+
+        Scanner lectura = new Scanner (System.in);
+        System.out.println("Ingrese el numero de Jugadores: ");
+        String nroJugadores  = lectura.next();
+
 
 
     }
