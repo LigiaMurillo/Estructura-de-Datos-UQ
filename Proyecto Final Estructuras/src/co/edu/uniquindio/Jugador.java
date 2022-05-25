@@ -3,7 +3,7 @@ package co.edu.uniquindio;
 public class Jugador {
 
     private String nombre;
-    private boolean maquina = true;
+    private boolean jugadorHumano = true;
     private int semaforosDisponibles;
     private Vertice ubicacion;
     private Jugador siguiente;
@@ -12,9 +12,16 @@ public class Jugador {
         this.nombre = nombre;
     }
 
+    public Jugador(String nombre, boolean maquina, int semaforosDisponibles) {
+        this.nombre = nombre;
+        this.jugadorHumano = maquina;
+        this.semaforosDisponibles = semaforosDisponibles;
+    }
+
+
     public Jugador(String nombre, boolean maquina, int semaforosDisponibles, Vertice ubicacion) {
         this.nombre = nombre;
-        this.maquina = maquina;
+        this.jugadorHumano = maquina;
         this.semaforosDisponibles = semaforosDisponibles;
         this.ubicacion = ubicacion;
     }
@@ -27,12 +34,12 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    public boolean isMaquina() {
-        return maquina;
+    public boolean isJugadorHumano() {
+        return jugadorHumano;
     }
 
-    public void setMaquina(boolean maquina) {
-        this.maquina = maquina;
+    public void setJugadorHumano(boolean jugadorHumano) {
+        this.jugadorHumano = jugadorHumano;
     }
 
     public int getSemaforosDisponibles() {
@@ -57,5 +64,11 @@ public class Jugador {
 
     public void setSiguiente(Jugador siguiente) {
         this.siguiente = siguiente;
+    }
+
+    public int lanzarDado(){
+            int random = (((int) (Math.random() * 100000.0)) % (6)) + 1;
+            return random;
+
     }
 }

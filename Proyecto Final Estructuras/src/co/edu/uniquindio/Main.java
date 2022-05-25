@@ -25,8 +25,41 @@ public class Main {
 
 
         Scanner lectura = new Scanner (System.in);
-        System.out.println("Ingrese el numero de Jugadores: ");
+        System.out.println("Ingrese el numero de Jugadores humanos: ");
         String nroJugadores  = lectura.next();
+
+        while (Integer.parseInt(nroJugadores) <= 0 || Integer.parseInt(nroJugadores) >5){
+            System.out.println("El número de jugadores debe de ser mayo a 0 y menor que 6");
+            System.out.println("Ingrese el numero de Jugadores humanos: ");
+            nroJugadores  = lectura.next();
+        }
+
+        String nombre = "Maquina";
+        boolean jugadorHumano = false;
+        int semaforosDisponibles;
+        int aux=1;
+
+        if(Integer.parseInt(nroJugadores)+1 == 2){
+            semaforosDisponibles = 4;
+        }else if (Integer.parseInt(nroJugadores)+1 == 3){
+            semaforosDisponibles = 3;
+        }else if (Integer.parseInt(nroJugadores)+1 == 4 || Integer.parseInt(nroJugadores)+1 == 5){
+            semaforosDisponibles = 2;
+        }else {
+            semaforosDisponibles = 1;
+        }
+
+        do {
+
+            listaJugadores.add(new NodoEnlaceSimple<Jugador>(new Jugador(nombre, jugadorHumano, semaforosDisponibles)));
+            System.out.println("Ingrese nombre del Jugador: ");
+            nombre = lectura.nextLine();
+            jugadorHumano = true;
+            aux ++;
+
+        }while (aux <= Integer.parseInt(nroJugadores));
+
+
 
 
 
@@ -223,7 +256,7 @@ public class Main {
 
         System.out.println(matriz);
 
-        System.out.println(matriz.rutaMasCorta(matriz.buscarVertice("Centro1"), matriz.buscarVertice("Centro3")));
+        //System.out.println(matriz.rutaMasCorta(matriz.buscarVertice("Centro1"), matriz.buscarVertice("Centro3")));
 
     }
 }
